@@ -1,5 +1,14 @@
-# AI Text Classifier
+Reflections: 
 
+1. I built an AI-powered text classification feature using a local LLM with Ollama. I chose Option A because it seemed like the fastest and simplest way to actually get something working without having to deal with API keys or setting up external services. The app lets a user type in text and then classifies it as a “question,” “complaint,” or “feedback.” I also added streaming responses and caching so it would meet the Complete Tier requirements.
+
+2. What surprised me the most was how many small issues came up even though the idea itself was pretty simple. At first, I ran into errors like “command not found,” which turned out to be because Ollama wasn’t installed. Then I got errors like “404 Not Found” and “400 Bad Request,” which were caused by using the wrong API endpoint or formatting the request incorrectly. It was also frustrating that if Ollama wasn’t running or the model wasn’t pulled, nothing worked at all. Honestly, debugging took way longer than writing the actual code for the UI.
+
+3. I learned that LLM APIs are really sensitive to how you structure requests. Even a small mistake in the URL or body can completely break everything. Using Ollama locally was nice because I didn’t need an API key, but it also meant I had to manage everything myself, like making sure the server was running and the model was installed. It definitely helped me understand how these systems work behind the scenes.
+
+4. If I had more time, I would improve the design and make the classifications more accurate by tweaking the prompt more. I’d also maybe store past results instead of just caching them temporarily. Overall, this project helped me go from just learning about APIs to actually using one in a real app.
+
+# AI Text Classifier
 A minimal web app that uses a **local LLM (Ollama)** to classify any text as a **question**, **complaint**, or **feedback** — with streaming responses and in-memory caching.
 
 ## Features
