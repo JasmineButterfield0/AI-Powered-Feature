@@ -1,0 +1,166 @@
+/* ============================================================
+   style.css — AI Text Classifier
+   Basic, clean styles. No framework needed.
+   ============================================================ */
+
+/* --- Reset & base ----------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f0f2f5;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* --- Card container --------------------------------------- */
+.container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem 2.5rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.4rem;
+  color: #1a1a2e;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* --- Input group ------------------------------------------ */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.2s;
+  line-height: 1.5;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #6366f1; /* indigo highlight */
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  background: #6366f1;   /* indigo */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.1s;
+  align-self: flex-end;
+  min-width: 120px;
+}
+
+button:hover:not(:disabled) {
+  background: #4f46e5;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+button:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+}
+
+/* --- Result box ------------------------------------------- */
+.result-box {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.result-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Category badges — color changes based on class added by JS */
+.badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: 0.03em;
+}
+
+.badge.question  { background: #dbeafe; color: #1d4ed8; } /* blue  */
+.badge.complaint { background: #fee2e2; color: #b91c1c; } /* red   */
+.badge.feedback  { background: #d1fae5; color: #065f46; } /* green */
+.badge.thinking  { background: #fef9c3; color: #92400e; } /* amber — while streaming */
+
+/* Raw streaming output (the full LLM reply shown underneath) */
+.stream-output {
+  margin-top: 0.75rem;
+  font-size: 0.88rem;
+  color: #4b5563;
+  white-space: pre-wrap;       /* preserve line-breaks from the model */
+  font-family: monospace;
+  min-height: 1rem;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 0.5rem;
+}
+
+/* --- Error box -------------------------------------------- */
+.error-box {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #be123c;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* --- Cache note ------------------------------------------- */
+.cache-note {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: #7c3aed;
+  font-style: italic;
+}
+
+/* --- Utility ---------------------------------------------- */
+.hidden { display: none !important; }

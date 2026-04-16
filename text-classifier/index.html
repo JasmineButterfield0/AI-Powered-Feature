@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Text Classifier</title>
+  <!-- Link to our external stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>AI Text Classifier</h1>
+    <p class="subtitle">
+      Type any text and the AI will classify it as a
+      <strong>question</strong>, <strong>complaint</strong>, or <strong>feedback</strong>.
+    </p>
+
+    <!-- Input area -->
+    <div class="input-group">
+      <textarea
+        id="userInput"
+        placeholder="e.g. Why is my order late? / I love the new design! / This feature keeps crashing."
+        rows="4"
+      ></textarea>
+
+      <button id="classifyBtn">Classify</button>
+    </div>
+
+    <!-- Result area — hidden until we have something to show -->
+    <div id="resultBox" class="result-box hidden">
+      <span class="result-label">Classification:</span>
+      <!-- The category badge (question / complaint / feedback) -->
+      <span id="categoryBadge" class="badge"></span>
+      <!-- Streaming raw output shown below the badge -->
+      <p id="streamOutput" class="stream-output"></p>
+    </div>
+
+    <!-- Error message area -->
+    <div id="errorBox" class="error-box hidden">
+      <span id="errorMsg"></span>
+    </div>
+
+    <!-- Cache status indicator -->
+    <p id="cacheNote" class="cache-note hidden">
+      &#9889; Result loaded from cache (no API call made).
+    </p>
+  </div>
+
+  <!-- Link to our JavaScript file — placed at the bottom so the DOM is ready -->
+  <script src="script.js"></script>
+</body>
+</html>
